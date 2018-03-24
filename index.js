@@ -1,4 +1,5 @@
 var http = require('http');
+var port = process.env.PORT || 8080;
 
 var userCount = 0;
 http.createServer(function (request, response) {
@@ -9,6 +10,6 @@ http.createServer(function (request, response) {
     response.write('Hello!\n');
     response.write('We have had '+userCount+' visits!\n');
     response.end();
-}).listen(8080);
+}).listen(port);
 
 console.log('Server started');
